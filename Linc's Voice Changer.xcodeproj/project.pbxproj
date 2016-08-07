@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002FF07D1D570975005B94EC /* RecordAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF07C1D570975005B94EC /* RecordAudio.swift */; };
+		002FF07F1D570BBC005B94EC /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF07E1D570BBC005B94EC /* HelperFunctions.swift */; };
+		002FF0811D570E16005B94EC /* PlayAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0801D570E16005B94EC /* PlayAudio.swift */; };
 		00A539D51D5633F7003F148E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A539D41D5633F7003F148E /* AppDelegate.swift */; };
 		00A539D71D5633F7003F148E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A539D61D5633F7003F148E /* ViewController.swift */; };
 		00A539DA1D5633F7003F148E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A539D81D5633F7003F148E /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002FF07C1D570975005B94EC /* RecordAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAudio.swift; sourceTree = "<group>"; };
+		002FF07E1D570BBC005B94EC /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		002FF0801D570E16005B94EC /* PlayAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAudio.swift; sourceTree = "<group>"; };
 		00A539D11D5633F7003F148E /* Linc's Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Linc's Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A539D41D5633F7003F148E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A539D61D5633F7003F148E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 				00A539DB1D5633F7003F148E /* Assets.xcassets */,
 				00A539DD1D5633F7003F148E /* LaunchScreen.storyboard */,
 				00A539E01D5633F7003F148E /* Info.plist */,
+				002FF07C1D570975005B94EC /* RecordAudio.swift */,
+				002FF07E1D570BBC005B94EC /* HelperFunctions.swift */,
+				002FF0801D570E16005B94EC /* PlayAudio.swift */,
 			);
 			path = "Linc's Voice Changer";
 			sourceTree = "<group>";
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A539D71D5633F7003F148E /* ViewController.swift in Sources */,
+				002FF07F1D570BBC005B94EC /* HelperFunctions.swift in Sources */,
+				002FF07D1D570975005B94EC /* RecordAudio.swift in Sources */,
 				00A539D51D5633F7003F148E /* AppDelegate.swift in Sources */,
+				002FF0811D570E16005B94EC /* PlayAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +302,7 @@
 				00A539E51D5633F7003F148E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
