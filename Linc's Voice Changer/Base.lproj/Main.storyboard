@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Linc_s_Voice_Changer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEz-NJ-E7w">
+                                <rect key="frame" x="76" y="240" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Sih-B7-tJq"/>
+                                    <constraint firstAttribute="height" constant="30" id="iHV-8F-Ahl"/>
+                                </constraints>
+                                <state key="normal" title="Slow" image="snail"/>
+                                <connections>
+                                    <action selector="SlowVoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eu0-TL-ybK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3U-Tf-3eU">
+                                <rect key="frame" x="253" y="240" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1JR-lm-k47"/>
+                                    <constraint firstAttribute="width" constant="46" id="Jet-9x-jJu"/>
+                                </constraints>
+                                <state key="normal" title="Fast" image="rabbit"/>
+                                <connections>
+                                    <action selector="FastVoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jGX-xC-rcz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQB-v0-8o5">
+                                <rect key="frame" x="200" y="311" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UDp-F9-mqd"/>
+                                    <constraint firstAttribute="width" constant="46" id="uoe-pa-0yd"/>
+                                </constraints>
+                                <state key="normal" title="Play" image="playPause"/>
+                                <connections>
+                                    <action selector="PlayPauseVoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Szv-MZ-7he"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yle-16-kRL">
+                                <rect key="frame" x="115" y="304" width="46" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="1U1-vR-gOa"/>
+                                    <constraint firstAttribute="height" constant="44" id="ZOO-vb-Rb6"/>
+                                    <constraint firstAttribute="width" constant="46" id="g8U-4W-tRK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="jDu-zi-vW9"/>
+                                </constraints>
+                                <state key="normal" title="Record" image="record"/>
+                                <connections>
+                                    <action selector="recordVoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AU7-Ck-I3P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eEz-NJ-E7w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="220" id="5gG-Fv-gAg"/>
+                            <constraint firstItem="yle-16-kRL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="99" id="7lh-eM-PPH"/>
+                            <constraint firstItem="cQB-v0-8o5" firstAttribute="leading" secondItem="yle-16-kRL" secondAttribute="trailing" constant="35" id="BMn-6p-dtK"/>
+                            <constraint firstItem="eEz-NJ-E7w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="ht9-dv-u97"/>
+                            <constraint firstItem="cQB-v0-8o5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="291" id="jdt-Bk-jSH"/>
+                            <constraint firstItem="p3U-Tf-3eU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="220" id="mIS-Oi-91S"/>
+                            <constraint firstItem="yle-16-kRL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="284" id="rC0-D7-AhS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p3U-Tf-3eU" secondAttribute="trailing" constant="60" id="x33-bt-6lM"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btFast" destination="yle-16-kRL" id="BCO-i2-EoU"/>
+                        <outlet property="btPlay" destination="cQB-v0-8o5" id="Q7d-LR-t9Q"/>
+                        <outlet property="btRecord" destination="yle-16-kRL" id="WA2-3F-Wl7"/>
+                        <outlet property="btSlow" destination="eEz-NJ-E7w" id="xfm-mk-fUt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454.5" y="391.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="playPause" width="471" height="328"/>
+        <image name="rabbit" width="646" height="461"/>
+        <image name="record" width="325" height="402"/>
+        <image name="snail" width="665" height="512"/>
+    </resources>
+</document>
