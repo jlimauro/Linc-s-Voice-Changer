@@ -47,7 +47,7 @@ public class RecordAudio: NSObject, AVAudioRecorderDelegate {
             } catch {
             }
         }
-        print("recording")
+        print("started recording")
     }
     
     func finishRecording(success success: Bool) {

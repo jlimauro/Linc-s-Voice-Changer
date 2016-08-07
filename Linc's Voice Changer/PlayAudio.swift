@@ -47,7 +47,7 @@ public class PlayAudio: NSObject, AVAudioPlayerDelegate {
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             isPlaying = true
-            print("playing audio")
+            print("started playing audio")
         }
         else {
             isPlaying = false

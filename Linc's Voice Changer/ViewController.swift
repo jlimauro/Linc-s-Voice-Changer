@@ -20,8 +20,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var btPlay: UIButton!
     
     // MARK: Properties
-    
-    var audioSession: AVAudioSession!
     var aRecorder: RecordAudio!
     var pAudio: PlayAudio!
     
