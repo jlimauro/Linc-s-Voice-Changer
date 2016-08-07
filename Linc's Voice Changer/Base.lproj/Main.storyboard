@@ -40,8 +40,8 @@
                                     <action selector="FastVoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jGX-xC-rcz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQB-v0-8o5">
-                                <rect key="frame" x="200" y="311" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQB-v0-8o5">
+                                <rect key="frame" x="196" y="311" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UDp-F9-mqd"/>
                                     <constraint firstAttribute="width" constant="46" id="uoe-pa-0yd"/>
