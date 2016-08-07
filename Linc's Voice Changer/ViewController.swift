@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import AVFoundation
-import Foundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class ViewController: UIViewController {
 
     // MARK: Controls
     
