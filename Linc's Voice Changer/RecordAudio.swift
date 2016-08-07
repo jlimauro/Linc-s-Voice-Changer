@@ -9,13 +9,11 @@
 import Foundation
 import AVFoundation
 
-public class RecordAudio: NSObject, AVAudioRecorderDelegate {
+class RecordAudio: NSObject, AVAudioRecorderDelegate {
     
-    public var audioSession: AVAudioSession!
-    public var audioRecorder: AVAudioRecorder!
-    
-    var helper: HelperFunctions = HelperFunctions()
-    
+    private var audioSession: AVAudioSession!
+    private var audioRecorder: AVAudioRecorder!
+    private var helper: HelperFunctions = HelperFunctions()
     // MARK: Recording settings
     
     let recordSettings = [AVSampleRateKey : NSNumber(float: Float(44100.0)),
@@ -24,6 +22,7 @@ public class RecordAudio: NSObject, AVAudioRecorderDelegate {
                           AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))]
 
     override init() {
+        super.init()
         
         audioSession = AVAudioSession.sharedInstance()
         
@@ -61,9 +60,13 @@ public class RecordAudio: NSObject, AVAudioRecorderDelegate {
         print("stopped recording")
     }
     
-    public func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             finishRecording(success: false)
         }
+    }
+    
+    func IsRecording() -> Bool {
+        return audioRecorder.recording
     }
 }

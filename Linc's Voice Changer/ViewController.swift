@@ -18,15 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var btPlay: UIButton!
     
     // MARK: Properties
-    var aRecorder: RecordAudio!
-    var pAudio: PlayAudio!
+    var audioAPI: LibraryAPI!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        aRecorder = RecordAudio()
-        pAudio = PlayAudio(audioSession: aRecorder.audioSession)
+        audioAPI = LibraryAPI.sharedInstance
     }
 
     // MARK: Button Events
@@ -37,37 +34,34 @@ class ViewController: UIViewController {
     
     @IBAction func PlayPauseVoice(sender: AnyObject) {
         
-        if pAudio.isPlaying {
-            if (pAudio.audioPlayer != nil)
-            {
-                pAudio.audioPlayer.pause()
-            }
+        if audioAPI.IsPlaying() {
+            audioAPI.pausePlaying()
             print("paused")
         }
         else {
             print("play normal")
-            pAudio.playAudio(1)
+            audioAPI.play()
         }
     }
     
     @IBAction func SlowVoice(sender: AnyObject) {
         print("play slow")
-        pAudio.playAudio(0.5)
-        //pAudio.playAudioWithVariablePitch(1000)
+        audioAPI.play(0.5)
+        //audioAPI.playAudioWithVariablePitch(1000)
     }
     
     @IBAction func FastVoice(sender: AnyObject) {
         print("play fast")
-         pAudio.playAudio(2)
-        //pAudio.playAudioWithVariablePitch(-1000)
+         audioAPI.play(2)
+        //audioAPI.pAudio.playAudioWithVariablePitch(-1000)
     }
     
     func recordTapped() {
-        if !aRecorder.audioRecorder.recording {
-            aRecorder.startRecording()
+        if !audioAPI.IsRecording() {
+            audioAPI.startRecording()            
             changeRecordButtonImage("stop.png")
         } else {
-            aRecorder.finishRecording(success: true)
+            audioAPI.finishedRecording()
             changeRecordButtonImage("record.png")
         }
     }

@@ -13,7 +13,7 @@ class HelperFunctions {
     
     // MARK: Get Folder/File Location
     
-    func directoryURL() -> NSURL? {
+     func directoryURL() -> NSURL? {
         let fileManager = NSFileManager.defaultManager()
         let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentDirectory = urls[0] as NSURL

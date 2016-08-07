@@ -9,17 +9,23 @@
 import Foundation
 import AVFoundation
 
-public class PlayAudio: NSObject, AVAudioPlayerDelegate {
+class PlayAudio: NSObject, AVAudioPlayerDelegate {
     
-    var audioEngine:AVAudioEngine!
-    var audioFile:AVAudioFile!
-    public var audioPlayer: AVAudioPlayer!
-    var audioSession: AVAudioSession!
-    var helper: HelperFunctions = HelperFunctions()
-    var isPlaying: Bool = false
+    private var audioEngine:AVAudioEngine!
+    private var audioFile:AVAudioFile!
+    private var audioPlayer: AVAudioPlayer!
+    private var audioSession: AVAudioSession!
+    private var isPlaying: Bool = false
+    private var helper: HelperFunctions = HelperFunctions()
     
     init(audioSession: AVAudioSession) {
         self.audioSession = audioSession
+        audioEngine = AVAudioEngine()
+    }
+    
+    override init() {
+        super.init()
+        audioSession = AVAudioSession.sharedInstance()
         audioEngine = AVAudioEngine()
     }
     
@@ -96,8 +102,19 @@ public class PlayAudio: NSObject, AVAudioPlayerDelegate {
             return false
         }
     }
+    
+    func pausePlaying() {
+        if (audioPlayer != nil)
+        {
+            audioPlayer.pause()
+        }
+    }
+    
+    func IsPlaying() -> Bool {
+        return isPlaying
+    }
 
-    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         audioPlayerNodeFinished()
     }
 }
