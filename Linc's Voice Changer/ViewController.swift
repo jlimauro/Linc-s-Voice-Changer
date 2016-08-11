@@ -16,15 +16,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var btFast: UIButton!
     @IBOutlet weak var btRecord: UIButton!
     @IBOutlet weak var btPlay: UIButton!
+    @IBOutlet weak var scroller: HorizontalScroller!
     
     // MARK: Properties
     var audioAPI: LibraryAPI!
+    private var allSoundOptions = [SoundOption]()
+    private var currentOptionIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.translucent = false
+        
         audioAPI = LibraryAPI.sharedInstance
+        
+        scroller.delegate = self
+        reloadScroller()
     }
+    
+    // Imaged Tapped
+    func playSelectedOption(soundOptionIndex: Int) {
+        
+        if (soundOptionIndex < allSoundOptions.count && soundOptionIndex > -1) {
+            
+            let soundOption = allSoundOptions[soundOptionIndex]
+            
+            if let rate = soundOption.speedRate {
+                audioAPI.play(rate)
+                print("playing tapped rate: \(rate)")
+            }
+        }
+    }
+    
 
     // MARK: Button Events
     
@@ -75,4 +98,51 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+  func reloadScroller() {
+    allSoundOptions = LibraryAPI.sharedInstance.getSoundOptions()
+    
+    if currentOptionIndex < 0 {
+        currentOptionIndex = 0
+    } else if currentOptionIndex >= allSoundOptions.count {
+        currentOptionIndex = allSoundOptions.count - 1
+    }
+    scroller.reload()
 }
+
+func initialViewIndex(scroller: HorizontalScroller) -> Int {
+    return currentOptionIndex
+    }
+}
+
+extension ViewController: HorizontalScrollerDelegate {
+    
+    func horizontalScrollerClickedViewAtIndex(scroller: HorizontalScroller, index: Int) {
+        
+        let previousSoundOptionView = scroller.viewAtIndex(currentOptionIndex) as! SoundOptionView
+        previousSoundOptionView.highlightAlbum(false)
+        
+        currentOptionIndex = index
+        
+        let soundOptionView = scroller.viewAtIndex(index) as! SoundOptionView
+        soundOptionView.highlightAlbum(true)
+        
+        playSelectedOption(index)
+    }
+    
+    func numberOfViewsForHorizontalScroller(scroller: HorizontalScroller) -> (Int) {
+        return allSoundOptions.count
+    }
+    
+    func horizontalScrollerViewAtIndex(scroller: HorizontalScroller, index: Int) -> (UIView) {
+        let soundOption = allSoundOptions[index]
+        let soundOptionView = SoundOptionView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), imagePath: soundOption.imagePath)
+        if currentOptionIndex == index {
+            soundOptionView.highlightAlbum(true)
+        } else {
+            soundOptionView.highlightAlbum(false)
+        }
+        return soundOptionView
+    }
+}
+

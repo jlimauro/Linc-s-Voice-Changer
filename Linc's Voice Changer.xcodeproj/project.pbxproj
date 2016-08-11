@@ -11,6 +11,10 @@
 		002FF07F1D570BBC005B94EC /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF07E1D570BBC005B94EC /* HelperFunctions.swift */; };
 		002FF0811D570E16005B94EC /* PlayAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0801D570E16005B94EC /* PlayAudio.swift */; };
 		002FF0941D5774F4005B94EC /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0931D5774F4005B94EC /* LibraryAPI.swift */; };
+		002FF0AA1D5ABF55005B94EC /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0A91D5ABF55005B94EC /* HorizontalScroller.swift */; };
+		002FF0AD1D5AC629005B94EC /* SoundOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0AC1D5AC629005B94EC /* SoundOptionView.swift */; };
+		002FF0B01D5AC9CB005B94EC /* SoundOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0AF1D5AC9CB005B94EC /* SoundOption.swift */; };
+		002FF0B21D5C1116005B94EC /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FF0B11D5C1116005B94EC /* PersistencyManager.swift */; };
 		00A539D51D5633F7003F148E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A539D41D5633F7003F148E /* AppDelegate.swift */; };
 		00A539D71D5633F7003F148E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A539D61D5633F7003F148E /* ViewController.swift */; };
 		00A539DA1D5633F7003F148E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A539D81D5633F7003F148E /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 		002FF07E1D570BBC005B94EC /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		002FF0801D570E16005B94EC /* PlayAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAudio.swift; sourceTree = "<group>"; };
 		002FF0931D5774F4005B94EC /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		002FF0A91D5ABF55005B94EC /* HorizontalScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScroller.swift; sourceTree = "<group>"; };
+		002FF0AC1D5AC629005B94EC /* SoundOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundOptionView.swift; sourceTree = "<group>"; };
+		002FF0AF1D5AC9CB005B94EC /* SoundOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundOption.swift; sourceTree = "<group>"; };
+		002FF0B11D5C1116005B94EC /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		00A539D11D5633F7003F148E /* Linc's Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Linc's Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A539D41D5633F7003F148E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00A539D61D5633F7003F148E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,7 @@
 				002FF07E1D570BBC005B94EC /* HelperFunctions.swift */,
 				002FF07C1D570975005B94EC /* RecordAudio.swift */,
 				002FF0801D570E16005B94EC /* PlayAudio.swift */,
+				002FF0B11D5C1116005B94EC /* PersistencyManager.swift */,
 			);
 			name = "API Classes";
 			sourceTree = "<group>";
@@ -70,6 +79,23 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		002FF0AB1D5ABF5B005B94EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				002FF0A91D5ABF55005B94EC /* HorizontalScroller.swift */,
+				002FF0AC1D5AC629005B94EC /* SoundOptionView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		002FF0AE1D5AC9B1005B94EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				002FF0AF1D5AC9CB005B94EC /* SoundOption.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		00A539C81D5633F7003F148E = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +115,8 @@
 		00A539D31D5633F7003F148E /* Linc's Voice Changer */ = {
 			isa = PBXGroup;
 			children = (
+				002FF0AE1D5AC9B1005B94EC /* Model */,
+				002FF0AB1D5ABF5B005B94EC /* Views */,
 				002FF0921D5774C1005B94EC /* API */,
 				00A539D41D5633F7003F148E /* AppDelegate.swift */,
 				00A539DB1D5633F7003F148E /* Assets.xcassets */,
@@ -176,7 +204,11 @@
 				002FF0941D5774F4005B94EC /* LibraryAPI.swift in Sources */,
 				002FF07D1D570975005B94EC /* RecordAudio.swift in Sources */,
 				00A539D51D5633F7003F148E /* AppDelegate.swift in Sources */,
+				002FF0B21D5C1116005B94EC /* PersistencyManager.swift in Sources */,
+				002FF0AD1D5AC629005B94EC /* SoundOptionView.swift in Sources */,
+				002FF0AA1D5ABF55005B94EC /* HorizontalScroller.swift in Sources */,
 				002FF0811D570E16005B94EC /* PlayAudio.swift in Sources */,
+				002FF0B01D5AC9CB005B94EC /* SoundOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

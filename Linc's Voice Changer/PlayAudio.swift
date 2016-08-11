@@ -37,6 +37,7 @@ class PlayAudio: NSObject, AVAudioPlayerDelegate {
         }
         catch let error as NSError {
             print(error.localizedDescription)
+            print("No recording")
         }
     }
     
