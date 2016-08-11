@@ -18,15 +18,11 @@ class PlayAudio: NSObject, AVAudioPlayerDelegate {
     private var isPlaying: Bool = false
     private var helper: HelperFunctions = HelperFunctions()
     
-    init(audioSession: AVAudioSession) {
-        self.audioSession = audioSession
-        audioEngine = AVAudioEngine()
-    }
-    
     override init() {
         super.init()
         audioSession = AVAudioSession.sharedInstance()
         audioEngine = AVAudioEngine()
+        setSessionPlayAndRecord()
     }
     
     func setAudioPlayer() {
@@ -58,6 +54,37 @@ class PlayAudio: NSObject, AVAudioPlayerDelegate {
         }
         else {
             isPlaying = false
+        }
+    }
+    
+    func setSessionPlayAndRecord() {
+        var error: NSError?
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        } catch let error1 as NSError {
+            error = error1
+            print("could not set session category")
+            if let e = error {
+                print(e.localizedDescription)
+            }
+        }
+        do {
+            try audioSession.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+        } catch let error1 as NSError {
+            error = error1
+            print("could not set output to speaker")
+            if let e = error {
+                print(e.localizedDescription)
+            }
+        }
+        do {
+            try audioSession.setActive(true)
+        } catch let error1 as NSError {
+            error = error1
+            print("could not make session active")
+            if let e = error {
+                print(e.localizedDescription)
+            }
         }
     }
     
@@ -108,6 +135,7 @@ class PlayAudio: NSObject, AVAudioPlayerDelegate {
         if (audioPlayer != nil)
         {
             audioPlayer.pause()
+            isPlaying = false
         }
     }
     

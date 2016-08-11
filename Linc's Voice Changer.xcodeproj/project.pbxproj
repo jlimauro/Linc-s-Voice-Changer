@@ -115,8 +115,6 @@
 		00A539D31D5633F7003F148E /* Linc's Voice Changer */ = {
 			isa = PBXGroup;
 			children = (
-				002FF0AE1D5AC9B1005B94EC /* Model */,
-				002FF0AB1D5ABF5B005B94EC /* Views */,
 				002FF0921D5774C1005B94EC /* API */,
 				00A539D41D5633F7003F148E /* AppDelegate.swift */,
 				00A539DB1D5633F7003F148E /* Assets.xcassets */,
@@ -124,6 +122,8 @@
 				00A539E01D5633F7003F148E /* Info.plist */,
 				00A539DD1D5633F7003F148E /* LaunchScreen.storyboard */,
 				00A539D81D5633F7003F148E /* Main.storyboard */,
+				002FF0AE1D5AC9B1005B94EC /* Model */,
+				002FF0AB1D5ABF5B005B94EC /* Views */,
 			);
 			path = "Linc's Voice Changer";
 			sourceTree = "<group>";

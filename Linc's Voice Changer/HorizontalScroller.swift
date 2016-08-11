@@ -58,8 +58,12 @@ class HorizontalScroller: UIView {
         self.addConstraint(NSLayoutConstraint(item: scroller, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0.0))
         
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(HorizontalScroller.scrollerTapped(_:)))
-        scroller.addGestureRecognizer(tapRecognizer)
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(HorizontalScroller.scrollerTapped(_:)))
+//        scroller.addGestureRecognizer(tapRecognizer)
+        
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(HorizontalScroller.scrollerTapped(_:)))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        scroller.addGestureRecognizer(singleTapGestureRecognizer)
     }
     
     
